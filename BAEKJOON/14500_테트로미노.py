@@ -6,16 +6,19 @@ import sys
 input = sys.stdin.readline
 N, M = map(int, input().strip().split())
 mat = []
+max_mat = 0
 for i in range(N):
     row = list(map(int, input().strip().split()))
+    max_mat = max(max_mat, max(row))
     mat.append(row)
-
 
 
 min_i, max_i = 0, N-1
 min_j, max_j = 0, M-1
  
 def dfs(i, j, size, cum_sum, log):
+    if max_sum >= cum_sum + max_mat * (5 - size):
+        return 0
     if visited[i][j] == True:
         return 0
     visited[i][j] = True
