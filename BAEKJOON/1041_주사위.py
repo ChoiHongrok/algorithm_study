@@ -7,7 +7,7 @@ input = sys.stdin.readline
 N = int(input())
 DICE = list(map(int, input().split()))
 if N == 1:
-    print(21-max(DICE))
+    print(sum(DICE)-max(DICE))
     exit(0)
 candid = set(i for i in range(6))
 oppo = {0:5, 1:4, 2:3, 3:2, 4:1, 5:0}
